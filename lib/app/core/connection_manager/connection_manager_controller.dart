@@ -52,19 +52,19 @@ class ConnectionManagerController extends GetxController {
         isInternetConnected.value = true;
         connectedStatusMessage.value = "Wifi Connected";
         break;
+
       case ConnectivityResult.mobile:
         connectionType.value = ConnectionType.mobileData;
         isInternetConnected.value = true;
-
         connectedStatusMessage.value = "Mobile Data Connected";
-
         break;
+
       case ConnectivityResult.none:
         connectionType.value = ConnectionType.noInternet;
         isInternetConnected.value = false;
-
         connectedStatusMessage.value = "No Internet Connection";
         break;
+        
       default:
         CustomSnackBar.showCustomErrorSnackBar(
           title: 'Error',
@@ -73,4 +73,5 @@ class ConnectionManagerController extends GetxController {
         break;
     }
   }
+
 }

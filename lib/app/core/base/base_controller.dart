@@ -9,13 +9,13 @@ abstract class BaseController extends GetxController {
 
   final resizeToAvoidBottomInset = true.obs;
 
-
   //final logger = Logger();
-  final _pageSateController = PageState.defaultState.obs;
 
-  // final connectionController = Get.find<ConnectionManagerController>();
   // final GlobalKey<ScaffoldState> globalKey = GlobalKey<ScaffoldState>();
+
   final connectionController = Get.find<ConnectionManagerController>().obs;
+
+  final _pageSateController = PageState.defaultState.obs;
 
   PageState get pageState => _pageSateController.value;
 

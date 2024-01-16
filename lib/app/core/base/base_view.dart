@@ -9,9 +9,6 @@ abstract class BaseView<Controller extends BaseController> extends GetView<Contr
 
   PreferredSizeWidget? appBar(BuildContext context);
 
-  //required
-  Widget body(BuildContext context);
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -19,7 +16,7 @@ abstract class BaseView<Controller extends BaseController> extends GetView<Contr
       child: Obx(() {
         return Scaffold(
           //sets ios status bar color
-          // TODO: backgroundColor: add your color here,
+          // TODO: backgroundColor: add your screen bg color here,
           // key: controller.globalKey,
           resizeToAvoidBottomInset: controller.resizeToAvoidBottomInset.value,
           appBar: appBar(context),
@@ -40,27 +37,12 @@ abstract class BaseView<Controller extends BaseController> extends GetView<Contr
           controller.connectionController.value.isInternetConnected.value
               ? const SizedBox()
               : connectionStatusView(context) ?? const SizedBox(),
-          Expanded(child: pageContent(context)),
+          Expanded(
+            child: body(context),
+          ),
         ],
       ),
     );
-  }
-
-  Widget pageContent(BuildContext context) {
-    return body(context);
-  }
-
-  //optional
-  Widget? bottomNavigationBar() {
-    return null;
-  }
-
-  Widget? drawer(BuildContext context) {
-    return null;
-  }
-
-  Widget? floatingActionButton() {
-    return null;
   }
 
   Widget? connectionStatusView(BuildContext context) {
@@ -81,5 +63,22 @@ abstract class BaseView<Controller extends BaseController> extends GetView<Contr
             ),
           )),
     );
+  }
+
+  //required
+  Widget body(BuildContext context);
+
+  //optional
+  Widget? bottomNavigationBar() {
+    return null;
+  }
+
+  // 
+  Widget? drawer(BuildContext context) {
+    return null;
+  }
+
+  Widget? floatingActionButton() {
+    return null;
   }
 }

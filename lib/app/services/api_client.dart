@@ -58,7 +58,6 @@ class BaseClient {
       }) async {
     try {
 
-
       // 1) indicate loading state
       await onLoading?.call();
       // 2) try to perform http request

@@ -45,10 +45,9 @@ dependencies:
     sdk: flutter
 
 dev_dependencies:
-  mockito:
-  flutter_lints: 3.0.1
-
-  
+  flutter_lints: 3.0.1 # lints for flutter
+  build_runner:  # generate dart files
+  hive_generator: # generate hive files
 
   flutter_test:
     sdk: flutter
