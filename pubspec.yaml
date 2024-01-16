@@ -57,5 +57,5 @@ flutter:
 
   assets:
     - assets/images/
-    - assets/icons/
+    - assets/vectors/
     - assets/lottie/
